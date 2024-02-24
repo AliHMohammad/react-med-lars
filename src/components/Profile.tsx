@@ -15,9 +15,9 @@ export default function Profile({ name, email, isActive, singleLine }: Props) {
 		</>
 	) : (
 		<div>
-			<h3>{name}</h3>
-			<p>{email}</p>
-			<p>{isActive ? 'Is active' : 'Is not active'}</p>
+			<h3>Name: {name}</h3>
+			<p>Email: {email}</p>
+			<p>Status: {isActive ? 'Is active' : 'Is not active'}</p>
 		</div>
 	);
 }
