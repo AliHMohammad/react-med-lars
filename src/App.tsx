@@ -1,24 +1,23 @@
 import { useState, CSSProperties } from 'react';
 import './App.css';
 import Propsdemo from './exercises/Propsdemo.tsx';
+import ListDemo from './exercises/ListDemo.tsx';
 //import { exerciseStyle, headerStyle, outerDivStyle } from "./exerciseStyles";
-
 
 export default function App() {
 	const [selectedView, setSelectedView] = useState('info');
 	let headerStyle;
 	const outerDivStyle = {};
 	const exerciseStyle = {
-		width: "70%"
+		width: '70%',
 	};
-
 
 	function handleSelected(selected: string) {
 		setSelectedView(selected);
 	}
 
 	const btnStyle = {
-		width: '100%'
+		width: '100%',
 	};
 
 	return (
@@ -33,7 +32,8 @@ export default function App() {
 					</div>
 					<div style={exerciseStyle}>
 						{selectedView == 'info' && <p>All exercises for React day-1</p>}
-						{selectedView == 'props1' && <Propsdemo title="Profiles" />}
+						{selectedView == 'props1' && <Propsdemo title='Profiles' />}
+						{selectedView == 'list' && <ListDemo title='List Demo' />}
 						{/**Add the exercise components you create for each exercise using the key you used for the matching button  */}
 					</div>
 				</div>
@@ -56,6 +56,9 @@ const Buttons = (props: ButtonProps) => {
 			{/* Add a new button for each of the exercises you complete */}
 			<button style={btnStyle} onClick={() => handleSelected('props1')}>
 				Props demo1
+			</button>
+			<button style={btnStyle} onClick={() => handleSelected('list')}>
+				List demo
 			</button>
 		</>
 	);
