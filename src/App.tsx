@@ -1,18 +1,7 @@
 import { useState } from "react";
-
-interface Country {
-	name: { common: string; official: string };
-	capital: string[];
-	borders: string[];
-	population: number;
-	flags: { png: string; svg: string; alt: string };
-	maps: { googleMaps: string };
-}
-
-
-type CountryInfoProps = {
-	country: Country | null;
-};
+import "./App.css"
+import Country from './models/Country.ts';
+import CountryInfo from './components/CountryInfo.tsx';
 
 
 const fetchCountryData = async (countryCode: string) => {
@@ -22,17 +11,14 @@ const fetchCountryData = async (countryCode: string) => {
 	return countries[0];
 };
 
-
 export default function App() {
-	const [code, setCode] = useState("dk");
-	const [country, setCountry] = useState(null);
-
+	const [code, setCode] = useState<string>("dk");
+	const [country, setCountry] = useState<Country | null>(null);
 
 	const getInfo = async () => {
 		const info = await fetchCountryData(code);
 		setCountry(info);
 	};
-
 
 	return (
 		<>
@@ -48,23 +34,4 @@ export default function App() {
 		</>
 	);
 }
-const CountryInfo = ({country}: CountryInfoProps) => {
 
-	return country == null ? (
-		<p>Enter Country Code above to fetch country info</p>
-	) : (
-		<>
-			<h1>Country Info</h1>
-			<h4>Flag</h4>
-			<img style={{ width: 100 }} src={country.flags.png} alt={country.flags.alt} />
-			<p>Country Name Common: TODO</p>
-			<p>Country Name Official: TODO</p>
-			<p>Country Capital: TODO</p>
-			<p>Population: TODO</p>
-			<p>Country Borders: {country.borders.join(", ")}</p>
-			<a href="TODO" target="_blank">
-				Google Maps
-			</a>
-		</>
-	);
-};
