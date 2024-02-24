@@ -3,6 +3,7 @@ import './App.css';
 import Propsdemo from './exercises/Propsdemo.tsx';
 import ListDemo from './exercises/ListDemo.tsx';
 import EventDemo from './exercises/EventDemo.tsx';
+import FormUncontrolled from './exercises/FormUncontrolled.tsx';
 //import { exerciseStyle, headerStyle, outerDivStyle } from "./exerciseStyles";
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
 						{selectedView == 'props1' && <Propsdemo title='Profiles' />}
 						{selectedView == 'list' && <ListDemo title='List Demo' />}
 						{selectedView == 'event' && <EventDemo title='Event Demo' />}
+						{selectedView == "uncontrolled" && <FormUncontrolled title="Form Uncontrolled"/>}
 						{/**Add the exercise components you create for each exercise using the key you used for the matching button  */}
 					</div>
 				</div>
@@ -64,6 +66,9 @@ const Buttons = (props: ButtonProps) => {
 			</button>
 			<button style={btnStyle} onClick={() => handleSelected('event')}>
 				Event demo
+			</button>
+			<button style={btnStyle} onClick={() => handleSelected('uncontrolled')}>
+				Uncontrolled form
 			</button>
 		</>
 	);
