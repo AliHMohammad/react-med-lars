@@ -5,7 +5,7 @@ type Props = {
 	country: Country | null;
 };
 
-export default function CountryInfo({country}:Props) {
+export default function CountryResult({country}:Props) {
 	return country == null ? (
 		<p>Enter Country Code above to fetch country info</p>
 	) : (
@@ -13,12 +13,12 @@ export default function CountryInfo({country}:Props) {
 			<h1>Country Info</h1>
 			<h4>Flag</h4>
 			<img style={{ width: 100 }} src={country.flags.png} alt={country.flags.alt} />
-			<p>Country Name Common: TODO</p>
-			<p>Country Name Official: TODO</p>
-			<p>Country Capital: TODO</p>
-			<p>Population: TODO</p>
+			<p>Country Name Common: {country.name.common}</p>
+			<p>Country Name Official: {country.name.official}</p>
+			<p>Country Capital: {country.capital}</p>
+			<p>Population: {country.population}</p>
 			<p>Country Borders: {country.borders.join(", ")}</p>
-			<a href="TODO" target="_blank">
+			<a href={country.maps.googleMaps} target="_blank">
 				Google Maps
 			</a>
 		</>
