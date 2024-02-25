@@ -7,6 +7,8 @@ import FormUncontrolled from './exercises/FormUncontrolled.tsx';
 import StateDemo from './exercises/StateDemo.tsx';
 import StateDemoObject from './exercises/StateDemoObject.tsx';
 import StateDemoArray from './exercises/StateDemoArray.tsx';
+import UseEffectDemo from './exercises/UseEffectDemo.tsx';
+import FetchDemo from './exercises/FetchDemo.tsx';
 //import { exerciseStyle, headerStyle, outerDivStyle } from "./exerciseStyles";
 
 export default function App() {
@@ -44,6 +46,8 @@ export default function App() {
 						{selectedView == 'state' && <StateDemo title="useState demo" />}
 						{selectedView == 'stateObj' && <StateDemoObject title="useState demo object" />}
 						{selectedView == 'stateArr' && <StateDemoArray title="useState demo array" />}
+						{selectedView == "effect" && <UseEffectDemo title="useEffect demo"/>}
+						{selectedView == "fetch" && <FetchDemo title="Fetch demo"/>}
 						{/**Add the exercise components you create for each exercise using the key you used for the matching button  */}
 					</div>
 				</div>
@@ -84,6 +88,12 @@ const Buttons = (props: ButtonProps) => {
 			</button>
 			<button style={btnStyle} onClick={() => handleSelected('stateArr')}>
 				UseState Array
+			</button>
+			<button style={btnStyle} onClick={() => handleSelected('effect')}>
+				UseEffect
+			</button>
+			<button style={btnStyle} onClick={() => handleSelected('fetch')}>
+				Fetch
 			</button>
 		</>
 	);

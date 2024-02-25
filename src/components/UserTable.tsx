@@ -19,7 +19,7 @@ export default function UserTable({ users }: Props) {
 				</thead>
 				<tbody>
 					{users.map((user) => (
-						<tr>
+						<tr key={user.id}>
 							<td>{user.name}</td>
 							<td>{user.email}</td>
 							<td>{user.isActive ? "Yes" : "No"}</td>
