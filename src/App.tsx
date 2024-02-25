@@ -4,6 +4,8 @@ import Propsdemo from './exercises/Propsdemo.tsx';
 import ListDemo from './exercises/ListDemo.tsx';
 import EventDemo from './exercises/EventDemo.tsx';
 import FormUncontrolled from './exercises/FormUncontrolled.tsx';
+import StateDemo from './exercises/StateDemo.tsx';
+import StateDemoObject from './exercises/StateDemoObject.tsx';
 //import { exerciseStyle, headerStyle, outerDivStyle } from "./exerciseStyles";
 
 export default function App() {
@@ -38,6 +40,8 @@ export default function App() {
 						{selectedView == 'list' && <ListDemo title='List Demo' />}
 						{selectedView == 'event' && <EventDemo title='Event Demo' />}
 						{selectedView == "uncontrolled" && <FormUncontrolled title="Form Uncontrolled"/>}
+						{selectedView == "state" && <StateDemo title="useState demo"/>}
+						{selectedView == "stateObj" && <StateDemoObject title="useState demo object"/>}
 						{/**Add the exercise components you create for each exercise using the key you used for the matching button  */}
 					</div>
 				</div>
@@ -69,6 +73,12 @@ const Buttons = (props: ButtonProps) => {
 			</button>
 			<button style={btnStyle} onClick={() => handleSelected('uncontrolled')}>
 				Uncontrolled form
+			</button>
+			<button style={btnStyle} onClick={() => handleSelected('state')}>
+				UseState
+			</button>
+			<button style={btnStyle} onClick={() => handleSelected('stateObj')}>
+				UseState Object
 			</button>
 		</>
 	);
