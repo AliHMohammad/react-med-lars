@@ -6,6 +6,7 @@ import EventDemo from './exercises/EventDemo.tsx';
 import FormUncontrolled from './exercises/FormUncontrolled.tsx';
 import StateDemo from './exercises/StateDemo.tsx';
 import StateDemoObject from './exercises/StateDemoObject.tsx';
+import StateDemoArray from './exercises/StateDemoArray.tsx';
 //import { exerciseStyle, headerStyle, outerDivStyle } from "./exerciseStyles";
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
 	let headerStyle;
 	const outerDivStyle = {};
 	const exerciseStyle = {
-		width: '70%',
+		width: '70%'
 	};
 
 	function handleSelected(selected: string) {
@@ -21,7 +22,7 @@ export default function App() {
 	}
 
 	const btnStyle = {
-		width: '100%',
+		width: '100%'
 	};
 
 	return (
@@ -36,12 +37,13 @@ export default function App() {
 					</div>
 					<div style={exerciseStyle}>
 						{selectedView == 'info' && <p>All exercises for React day-1</p>}
-						{selectedView == 'props1' && <Propsdemo title='Profiles' />}
-						{selectedView == 'list' && <ListDemo title='List Demo' />}
-						{selectedView == 'event' && <EventDemo title='Event Demo' />}
-						{selectedView == "uncontrolled" && <FormUncontrolled title="Form Uncontrolled"/>}
-						{selectedView == "state" && <StateDemo title="useState demo"/>}
-						{selectedView == "stateObj" && <StateDemoObject title="useState demo object"/>}
+						{selectedView == 'props1' && <Propsdemo title="Profiles" />}
+						{selectedView == 'list' && <ListDemo title="List Demo" />}
+						{selectedView == 'event' && <EventDemo title="Event Demo" />}
+						{selectedView == 'uncontrolled' && <FormUncontrolled title="Form Uncontrolled" />}
+						{selectedView == 'state' && <StateDemo title="useState demo" />}
+						{selectedView == 'stateObj' && <StateDemoObject title="useState demo object" />}
+						{selectedView == 'stateArr' && <StateDemoArray title="useState demo array" />}
 						{/**Add the exercise components you create for each exercise using the key you used for the matching button  */}
 					</div>
 				</div>
@@ -79,6 +81,9 @@ const Buttons = (props: ButtonProps) => {
 			</button>
 			<button style={btnStyle} onClick={() => handleSelected('stateObj')}>
 				UseState Object
+			</button>
+			<button style={btnStyle} onClick={() => handleSelected('stateArr')}>
+				UseState Array
 			</button>
 		</>
 	);
