@@ -20,11 +20,12 @@ export default function UserTable({ users }: Props) {
 				<tbody>
 					{users.map((user) => (
 						<tr key={user.id}>
+							<td>{user.id}</td>
 							<td>{user.name}</td>
 							<td>{user.email}</td>
-							<td>{user.isActive ? "Yes" : "No"}</td>
+							<td>{user.isActive ? 'Yes' : 'No'}</td>
 							<td>
-								<button type='button'>Delete</button>
+								<button type="button">Delete</button>
 							</td>
 						</tr>
 					))}

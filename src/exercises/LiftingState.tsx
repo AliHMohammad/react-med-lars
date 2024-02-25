@@ -14,14 +14,17 @@ export default function LiftingState({ title }: { title: string }) {
 			setUsersArr((prevState) => prevState.filter((prevUser) => prevUser.id != newUser.id))
 		} else {
 			if (newUser.id) {
-				for (let i = 0; i < usersArr.length; i++) {
-					if (usersArr[i].id == newUser.id) {
-						const newList = [...usersArr];
-						newList[i] = newUser
-						setUsersArr(newList)
-						break;
+				const newUsersArr = usersArr.map((user) => {
+					if (user.id === newUser.id) {
+						return {
+							...newUser,
+							id: user.id
+						}
+					} else {
+						return user;
 					}
-				}
+				})
+				setUsersArr(newUsersArr)
 			} else {
 				setUsersArr((prevState) => [...prevState, {
 					...newUser,
