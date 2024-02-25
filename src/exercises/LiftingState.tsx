@@ -39,7 +39,7 @@ export default function LiftingState({ title }: { title: string }) {
 			<h2 style={{ textAlign: 'center' }}>{title}</h2>
 			<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
 				<div>
-					<UserTableWithButtons users={usersArr} setHighlightedUser={setHighlightedUser} setUsersArr={setUsersArr} />
+					<UserTableWithButtons users={usersArr} setHighlightedUser={setHighlightedUser} />
 				</div>
 				<div>
 					<UserFormControlled title="User form" onSubmitUser={handleSubmit} defaultUser={highlightedUser}  />
