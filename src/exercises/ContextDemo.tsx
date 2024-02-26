@@ -1,7 +1,7 @@
 
 import {BaseProps} from '../models/types.tsx';
-import { useRole } from '../components/RoleContentProvider.tsx';
-import RoleContextProvider from '../components/RoleContentProvider.tsx';
+import RoleProvider, { useRole } from '../components/RoleProvider.tsx';
+
 
 
 const topWidth = 220;
@@ -11,9 +11,9 @@ export default function ContextDemo({ title }: BaseProps) {
 	return (
 		<>
 			<div className="title">{title}</div>
-			<RoleContextProvider>
+			<RoleProvider>
 				<Root />
-			</RoleContextProvider>
+			</RoleProvider>
 		</>
 	);
 }
