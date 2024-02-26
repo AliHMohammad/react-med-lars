@@ -11,15 +11,9 @@ import UseEffectDemo from './exercises/UseEffectDemo.tsx';
 import FetchDemo from './exercises/FetchDemo.tsx';
 import LiftingState from './exercises/LiftingState.tsx';
 import ContextDemo from './exercises/ContextDemo.tsx';
-//import { exerciseStyle, headerStyle, outerDivStyle } from "./exerciseStyles";
 
 export default function App() {
 	const [selectedView, setSelectedView] = useState('info');
-	let headerStyle;
-	const outerDivStyle = {};
-	const exerciseStyle = {
-		width: '70%'
-	};
 
 	function handleSelected(selected: string) {
 		setSelectedView(selected);
@@ -31,15 +25,15 @@ export default function App() {
 
 	return (
 		<>
-			<div style={outerDivStyle}>
-				<div style={headerStyle}>
+			<div className="outer-div-style">
+				<div className="header-style">
 					<h2>React Exercises</h2>
 				</div>
 				<div style={{ display: 'flex' }}>
 					<div style={{ flex: 1, padding: 10 }}>
 						<Buttons onSelected={handleSelected} btnStyle={btnStyle} />
 					</div>
-					<div style={exerciseStyle}>
+					<div className="exercise-style">
 						{selectedView == 'info' && <p>All exercises for React day-1</p>}
 						{selectedView == 'props1' && <Propsdemo title="Profiles" />}
 						{selectedView == 'list' && <ListDemo title="List Demo" />}

@@ -4,6 +4,28 @@
     text-align: center;
 }
 
+.exercise-style {
+    flex: 3;
+    padding: 10px;
+    width: 800px;
+    text-align: left;
+    border-left: 2px solid black;
+}
+
+
+.header-style {
+    border-bottom: solid 2px blue;
+    margin-bottom: 20px;
+}
+
+
+.outer-div-style {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+}
+
 
 button {
     background-color: #008CBA; /* Green */
