@@ -14,7 +14,7 @@ export default function LiftingState({ title }: { title: string }) {
 			setUsersArr((prevState) => prevState.filter((prevUser) => prevUser.id != newUser.id))
 		} else {
 			if (newUser.id) {
-				const newUsersArr = usersArr.map((user) => {
+				/*const newUsersArr = usersArr.map((user) => {
 					if (user.id === newUser.id) {
 						return {
 							...newUser,
@@ -23,8 +23,8 @@ export default function LiftingState({ title }: { title: string }) {
 					} else {
 						return user;
 					}
-				})
-				setUsersArr(newUsersArr)
+				})*/
+				setUsersArr((prevArr) => prevArr.map((prevUser) => prevUser.id === newUser.id ? newUser : prevUser))
 			} else {
 				setUsersArr((prevState) => [...prevState, {
 					...newUser,
